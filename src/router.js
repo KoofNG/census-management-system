@@ -2,12 +2,12 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 
-import Home from './views/Home';
-import Form from './views/Register';
-import Preview from './views/Preview';
-import Success from './views/Success';
+import Home from './views/Home.vue';
+import Form from './views/Form.vue';
+import Preview from './views/Preview.vue';
+import Success from './views/Success.vue';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
@@ -23,12 +23,12 @@ export default new Router({
     },
     {
       path: '/preview',
-      name: 'register',
+      name: 'preview',
       component: Preview
     },
     {
       path: '/success',
-      name: 'register',
+      name: 'success',
       component: Success
     }
   ]
