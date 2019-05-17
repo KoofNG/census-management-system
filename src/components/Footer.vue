@@ -31,7 +31,7 @@ hr {
     width: 100%;
     position: relative;
     display: block;
-    border: .5px solid #afacac;
+    border: 1px solid #afacac;
     margin: 0px;
     padding: 0px;
 }
