@@ -4,14 +4,18 @@
             <h3><a href="#"><span id='color'>Census</span> Management System</a></h3>
         </div>
         <div class="action">
-            <h5>Get Started</h5>
+            <h5 @click="getStarted">Get Started</h5>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    
+    methods: {
+        getStarted : function () {
+            this.$router.push('/register');
+        }
+    },
 }
 </script>
 
@@ -30,12 +34,14 @@ export default {
     -webkit-box-sizing: border-box;
     justify-content: space-between;
 }
+
 div.brandName{
     display: block;
     position: relative;
     padding: 0px;
     margin: 0px;
 }
+
 div.action {
     height: 100%;
     width: auto;
@@ -54,10 +60,12 @@ h3 {
     cursor: pointer;
     padding: 26px 0px;
 }
+
 h3 a {
     text-decoration: none;
     color: inherit;
 }
+
 h5 {
     height: 100%;
     width: 100%;
@@ -69,14 +77,19 @@ h5 {
     color: #ffffff;
     box-sizing: border-box;
     border-radius: 0px;
-    transition: all 0.05s;
+    transition: all 300ms;
+    cursor: pointer;
 }
+
 /* Modifiers */
 span#color{
     color: #1e1edf;
 }
+
 h5:hover{
-    padding: 12px 15px;
+    padding: 9.5px 10px;
+    font-size: 15px;
+    font-weight: lighter;
 }
     
 </style>
