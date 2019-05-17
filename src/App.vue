@@ -12,6 +12,7 @@ html, body {
   margin: 0px;
   box-sizing: border-box;
 }
+
 #app {
   font-family: 'Work Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
