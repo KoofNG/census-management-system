@@ -153,4 +153,21 @@ div.action_button button:hover {
     border: 0.5px solid #1e1edf;
 }
 
+
+/* For Responsiveness */
+@media screen and (max-width: 375px) {
+    section#heroSection {
+        min-height: 300px;
+        padding: 15px 30px;
+    }
+    section#infoSection {
+        padding: 50px 30px;
+    }
+    div.mainTalk h3 {
+        font-size: 24px;
+    }
+    div.mainTalk p {
+        font-size: 16px;
+    }
+}
 </style>

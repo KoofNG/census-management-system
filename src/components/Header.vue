@@ -91,5 +91,25 @@ h5:hover{
     font-size: 15px;
     font-weight: lighter;
 }
-    
+
+
+/* For Responsive */
+
+@media screen and (max-width: 375px) {
+    div#header {
+        padding: 0 30px;
+    }
+    div.brandName h3 {
+        font-size: 1.2em;
+    }
+    div.action {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    section#heroSection {
+        padding: 30px;
+    }
+}
 </style>
