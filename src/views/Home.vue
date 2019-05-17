@@ -37,7 +37,6 @@ export default {
 
     methods: {
         getStarted : function () {
-            console.log(this);
             this.$router.push("/register");
         }
     },
