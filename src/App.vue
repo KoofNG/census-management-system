@@ -6,6 +6,13 @@
 
 @import url('https://fonts.googleapis.com/css?family=Work+Sans&display=swap');
 
+* {
+  box-sizing: border-box !important;
+  -moz-box-sizing: border-box !important;
+  -webkit-box-sizing: border-box !important;
+  padding: 0px;
+  margin: 0px;
+}
 html, body {
   font-family: 'Work Sans', sans-serif !important; 
   padding: 0px;
@@ -22,6 +29,11 @@ html, body {
 }
 #nav {
   padding: 30px;
+}
+
+::placeholder,
+::-webkit-input-placeholder {
+  color: #cccccc;
 }
 
 #nav a {
