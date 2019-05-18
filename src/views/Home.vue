@@ -155,7 +155,7 @@ div.action_button button:hover {
 
 
 /* For Responsiveness */
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 767px) {
     section#heroSection {
         min-height: 300px;
         padding: 15px 30px;

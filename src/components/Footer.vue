@@ -22,7 +22,7 @@ export default {
     position: relative;
     display: flex;
     flex-direction: column;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 /* Element */

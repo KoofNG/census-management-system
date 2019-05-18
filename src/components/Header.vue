@@ -46,7 +46,7 @@ div.action {
     height: 100%;
     width: auto;
     position: relative;
-    padding: 20px 20px;
+    padding: 20px 0px 20px 20px;
     margin: 0px;
     box-sizing: border-box;
 }
@@ -95,12 +95,14 @@ h5:hover{
 
 /* For Responsive */
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 767px) {
     div#header {
         padding: 0 30px;
+        height: 60px;
     }
     div.brandName h3 {
         font-size: 1.2em;
+        padding: 20px 0px;
     }
     div.action {
         display: none;
