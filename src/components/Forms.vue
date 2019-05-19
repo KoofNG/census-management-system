@@ -3,21 +3,14 @@
         <div id="image-section">
             <img alt="" src="../assets/avatar.png">
             <input type="file" name="">
+            <div id="alert" class="alert">
+                <p id="msgAlert">Fill in all * fields</p>
+            </div>
         </div>
         <div class="form">
-            <!-- <ul>
-                <li><h5 id="personal">Personal</h5></li>
-                <li><h5 id="location">Location</h5></li>
-                <li><h5 id="general">General</h5></li>
-                <li><h5 id="national">National</h5></li>
-            </ul> -->
-
             <div class="tabs">
                 <div class="tab active">
                     <h3>Personal Information</h3>
-                    <!-- <div id="before_line">
-                        <div id="after_line" :style="{width: growthBar + '%'}"></div>
-                    </div> -->
                     <form action="">
                         <div>
                             <label for="fullName">Full Name <span id="required">*</span></label>
@@ -50,37 +43,34 @@
                 </div>
                 <div class="tab">
                     <h3>Location Information</h3>
-                    <!-- <div id="before_line">
-                        <div id="after_line" :style="{width: growthBar + '%'}"></div>
-                    </div> -->
                     <form action="">
                         <div>
-                            <label for="stateOfOrigin">State of origin</label><span id="required">*</span>
+                            <label for="stateOfOrigin">State of origin <span id="required">*</span></label>
                             <select name="" v-on:change="getLGA" id='state' v-model="stateOfOrigin">                                    
                                 <option value="" disabled></option>
-                                <!-- <option v-for="e in AvailableStates" v-bind:value="e">{{e}}</option> -->
+                                <option v-for="(item, index) in AvailableStates" :key="index" v-bind:value="item">{{item}}</option>
                             </select>
                         </div>
                         <div>
-                            <label for="lga">local government area</label><span id="required">*</span>
+                            <label for="lga">Local Government Area <span id="required">*</span></label>
                             <select name="lga" id='lga' v-model="lga">
                                 <option value="" disabled>LGA</option>   
                                 <!-- <option v-for="e in stateLGAs" v-bind:value="e">{{e}}</option> -->
                             </select>
                         </div>
                         <div>
-                            <label for="">Hometown</label><span id="required">*</span>
-                            <input type="text" name="" v-model="hometown" id="" placeholder="eg: owo">
+                            <label for="">Hometown <span id="required">*</span></label>
+                            <input type="text" name="" v-model="homeTown" id="" placeholder="eg: owo">
                         </div>
                         <div>
-                            <label for="">State of residence</label>
+                            <label for="">State of Residence</label>
                             <select name="sor" v-model="stateOfResidence" id="">
                                 <option value="" disabled>Residence</option>
                                 <option value="ondo">Ondo</option>
                             </select>
                         </div>
                         <div>
-                            <label for="">lga of residence</label>
+                            <label for="">LGA of Residence</label>
                             <select name="" v-model="lgaOfResidence" id="">
                                 <option value="" disabled>LGA</option>
                                 <!-- <option v-for="lga in ondoLGA" v-bind:value="lga">{{lga}}</option> -->
@@ -88,22 +78,19 @@
                         </div>
                     </form>
                     <div class="btn_group">
-                        <button id="previous" @click="previousForm" type="submit">Previous</button>
+                        <button id="previous" type="submit">Previous</button>
                         <button id="next" @click="validateLocation" type="submit">Next</button>
                     </div>
                 </div>
                 <div class="tab">
                     <h3>General Information</h3>
-                    <!-- <div id="before_line">
-                        <div id="after_line" :style="{width: growthBar + '%'}"></div>
-                    </div> -->
                     <form action="">
                         <div>
-                            <label for="ethnicGroup">Ethnic Group</label><span id="required">*</span>
-                            <input type="text" name=""  v-model="ethnicGroup" id="ethnicGroup" placeholder='Ethnic group'>
+                            <label for="ethnicGroup">Ethnic Group <span id="required">*</span></label>
+                            <input type="text" name="" v-model="ethnicGroup" id="ethnicGroup" placeholder='Ethnic group'>
                         </div>
                         <div>
-                            <label for="religion">Religion</label><span id="required">*</span>
+                            <label for="religion">Religion <span id="required">*</span></label>
                             <select name="religion" v-model="religion" required='required' id="religion">
                                 <option value="" disabled>Religion</option>
                                 <option value="christian">Christianity</option>
@@ -112,7 +99,7 @@
                             </select>
                         </div>
                         <div>
-                            <label for="occupation">occupation</label><span id="required">*</span>
+                            <label for="occupation">Occupation <span id="required">*</span></label>
                             <select name="occupation" v-model="occupation" id="occupation">
                                 <option value="" disabled>Occupation</option>
                                 <option value="student">Student</option>
@@ -122,7 +109,7 @@
                             </select>
                         </div>
                         <div>
-                            <label for="phone-number">phone number</label>
+                            <label for="phone-number">Phone Number</label>
                             <input type="tel" v-model="phoneNumber" name="" id="phone-number" placeholder="08012345678">
                         </div>
                         <div>
@@ -131,15 +118,12 @@
                         </div>
                     </form>
                     <div class="btn_group">
-                        <button id="previous" @click="previousForm" type="submit">Previous</button>
+                        <button id="previous" type="submit">Previous</button>
                         <button id="next" @click="validateGeneral" type="submit">Next</button>
                     </div>
                 </div>
                 <div class="tab">
                     <h3>National Information</h3>
-                    <!-- <div id="before_line">
-                        <div id="after_line" :style="{width: growthBar + '%'}"></div>
-                    </div> -->
                     <form action="">   
                         <div>
                             <label for="bvn">Bank Verification Number</label>
@@ -155,12 +139,12 @@
                         </div>
                         <div>
                             <label for="passNum">International Passport Number</label>
-                            <input type="text" v-model="passNum" name="" placeholder="">
+                            <input type="text" v-model="passportNum" name="" placeholder="">
                         </div>
                         
                     </form>
                     <div class="btn_group">
-                        <button id="previous" @click="previousForm" type="submit">Previous</button>
+                        <button id="previous" type="submit">Previous</button>
                         <button id="next" @click="validateNational" type="submit">Preview</button>
                     </div>
                 </div>
@@ -171,6 +155,118 @@
 
 <script>
 export default {
+
+    data() {
+        return {
+            fullName: '',
+            dob: '',
+            age: 0,
+            gender: '',
+            homeAddress: '',
+            stateOfOrigin: '',
+            lga: '',
+            homeTown: '',
+            stateOfResidence: '',
+            lgaOfResidence: '',
+            ethnicGroup: '',
+            religion: '',
+            occupation: '',
+            phoneNumber: '',
+            email: '',
+            bvn: '',
+            nin: '',
+            vin: '',
+            passportNum: '',
+            fetchState: [],
+            stateLGAs: [],
+            AvailableStates: ["Abia","Adamawa","Akwa Ibom","Anambra","Bauchi","Bayelsa","Benue","Borno","Cross River","Delta","Ebonyi","Edo","Ekiti","Enugu","FCT","Gombe","Imo","Jigawa","Kaduna","Kano","Katsina","Kebbi","Kogi","Kwara","Lagos","Nasarawa","Niger","Ogun","Ondo","Osun","Oyo","Plateau","Rivers","Sokoto","Taraba","Yobe","Zamfara"],
+    
+        }
+    },
+
+    methods: {
+        moveNext: function() {
+            const formTabs = document.querySelectorAll('.tab');        
+            var tabsArray = [];
+            formTabs.forEach(element => {
+                tabsArray.push(element);
+            });            
+            const unique = document.querySelector('div.tab.active');
+            const index = tabsArray.indexOf(unique);            
+            document.querySelector('div.tab.active').classList.remove('active');
+            return formTabs[index+1].classList.add('active'); 
+        },
+
+        showAlert: function () {
+            const alert = document.getElementById('alert');
+            if (alert) {
+                alert.classList.add('active');
+                setTimeout(() => {
+                    alert.classList.remove('active')
+                }, 1500);
+            }
+        },
+
+        changeDOB: function() {
+            let dateOfBirth = new Date(this.dob.valueOf());
+            return (this.age = new Date().getFullYear().valueOf() - dateOfBirth.getFullYear());
+        },
+
+        getLGA: function(event) {
+            if(this.stateLGAs.length != 0){return this.stateLGAs.length = 0}
+
+            var choosenState = event.target.value;
+            var choosenIndex = this.AvailableStates.indexOf(choosenState);
+            var lgaArray = this.fetchState[choosenIndex].data.lgas;
+            lgaArray.forEach(element => {
+                var lgaName = element.data.name;
+                this.stateLGAs.push(lgaName);
+            });
+        },
+
+        validatePerson : function () {
+            if (this.fullName.length != 0 && this.dob != "" && this.gender.length != 0 && this.homeAddress.length != 0) {
+                this.moveNext();           
+            } else {
+                this.showAlert();
+            }
+        },
+
+        validateLocation : function () {
+            this.moveNext()
+        },
+
+        validateGeneral : function () {
+            this.moveNext()
+        },
+
+        validateNational : function () {
+            this.moveNext()
+        }
+    },
+
+    mounted() {
+        const formTabs = document.querySelectorAll('.tab');
+        const previousButton = document.querySelectorAll('button#previous');
+
+        var tabsArray = [];
+        formTabs.forEach(element => {
+            tabsArray.push(element);
+        });
+
+        previousButton.forEach(element => {
+            element.addEventListener('click', () => {
+                const unique = document.querySelector('div.tab.active');
+                const index = tabsArray.indexOf(unique);
+                document.querySelector('div.tab.active').classList.remove('active');
+                formTabs[index-1].classList.add('active');
+            });
+        });        
+
+        // fetch("./assets/lga.json")
+        // .then(console.log(res))
+        // .catch(err => {throw err});
+    },
     
 }
 </script>
@@ -183,6 +279,21 @@ section#form {
     margin: 0px;
     display: flex;
     flex-direction: column;
+}
+
+
+div.alert{
+    height: 40px;
+    min-width: 200px;
+    display: block;
+    position: relative;
+    opacity: 0;
+    padding: 10px 20px;
+    right: 0px;
+    z-index: -3;
+    top: 80%;
+    transition: all 1000ms;
+    background-color: #dc3545;
 }
 
 div#image-section {
@@ -225,6 +336,7 @@ div.btn_group {
     justify-content: space-between;
     margin-top: 20px;
 }
+
 /* Elements */
 div#image-section img {
     height: 170px;
@@ -237,6 +349,19 @@ div#image-section img {
 
 div#image-section input[type=file] {
     margin: auto 0px 0px 5px;
+}
+
+div.alert.active{
+    top: 96%;
+    opacity: 1;
+    z-index: 3;
+}
+
+p#msgAlert{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
 }
 
 ul {
